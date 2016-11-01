@@ -1,0 +1,22 @@
+/*#multipliers {
+  display: none;
+}
+#product {
+  display: none;
+}*/
+
+.jumbotron {
+  text-align: center;
+}
+
+.col-xs-4 {
+  border-style: solid;
+  padding: 100px;
+}
+
+.col-xs-4#glyphiconX {
+  border-style: none;
+  text-align: center;
+  font-size: 75px;
+  padding: 75px 10px 50px 10px;
+}
