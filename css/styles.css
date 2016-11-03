@@ -1,0 +1,35 @@
+
+.jumbotron{
+  text-align: center;
+  color: #0f0f43;
+  background-color: #c0d6e4;
+}
+.product {
+  display: none;
+}
+.answer {
+  border-style: solid;
+  padding: 10px;
+  color: green;
+  font-size: 37px;
+}
+
+.col-xs-4#firstnumber, #secondnumber {
+  border-style: solid;
+  display: inline;
+  padding: 80px;
+  font-size: 37px;
+  text-align: center;
+  background-image: url('http://images.freeimages.com/images/previews/d78/grungy-note-card-1146825.jpg');
+}
+
+.col-xs-4#glyphiconX {
+  border-style: none;
+  font-size: 65px;
+  padding: 95px 10px 50px 10px;
+  display: inline;
+  text-align: center;
+}
+.clickme {
+  align-items: center;
+}
