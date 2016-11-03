@@ -31,6 +31,11 @@ Table.prototype.newNumber = function(missedId1) {
   }
 }
 
+Table.prototype.firstNumbers = function() {
+  this.num1 = Math.floor((Math.random()* 12) +1);
+  this.num2 = Math.floor((Math.random()* 12) +1);
+}
+
 
 ///////////////////////////////////////////////////////////////
 
@@ -38,7 +43,7 @@ Table.prototype.newNumber = function(missedId1) {
 
 $(document).ready(function() {
   var table = new Table(0,0,0);
-  table.newNumber();
+  table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
   $("#submit").click(function(event) {
