@@ -16,12 +16,12 @@ Table.prototype.multiply = function() {
 Table.prototype.newNumber = function(missedId1) {
   var i = Math.floor((Math.random() * 2) +1);
   if (missedIt1.length > 4) {
-    var point = Math.floor(Math.random() * missedId1.length);
+    var point = Math.floor(Math.random() * missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
-  } else if ((i === 2) && (missedId1 !== [])) {
-    var point = Math.floor(Math.random() * missedId1.length);
+  } else if ((i === 2) && (missedIt1 !== [])) {
+    var point = Math.floor(Math.random() * missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
@@ -32,18 +32,18 @@ Table.prototype.newNumber = function(missedId1) {
 }
 
 
-
-
 ///////////////////////////////////////////////////////////////
+
+
 
 $(document).ready(function() {
   var table = new Table(0,0,0);
-  $(table.newNumber());
+  table.newNumber();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
   $("#submit").click(function(event) {
     event.preventDefault();
-    $(table.multiply());
+    table.multiply();
     $(".multipliers").hide();
     $(".product").show();
     $("#answer").append(table.answer);
@@ -69,8 +69,6 @@ $(document).ready(function() {
     $("#number2").empty();
     $("#answer").empty();
     table.newNumber(missedIt1);
-    alert(missedIt1);
-    alert(missedIt2);
     $("#number1").append(table.num1);
     $("#number2").append(table.num2);
     $(".product").hide();
