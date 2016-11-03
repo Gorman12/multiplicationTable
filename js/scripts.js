@@ -20,7 +20,7 @@ Table.prototype.newNumber = function(missedId1) {
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
-  } else if ((i === 2) && (missedIt1 !== [])) {
+  } else if ((i === 2) && (missedIt.length >= 1)) {
     var point = Math.floor(Math.random() * missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
