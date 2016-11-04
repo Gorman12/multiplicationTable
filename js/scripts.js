@@ -55,8 +55,13 @@ $(document).ready(function() {
   });
 
   $("#gotIt").click(function() {
-    missedIt1.splice(index, 1);
-    missedIt2.splice(index, 1);
+    if (index !== 999) {
+      missedIt1.splice(index, 1);
+      missedIt2.splice(index, 1);
+    } else {
+
+    }
+    index = 999;
     $("#number1").empty();
     $("#number2").empty();
     $("#answer").empty();
