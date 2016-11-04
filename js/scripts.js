@@ -46,8 +46,10 @@ Table.prototype.newNumber = function(missedIt1) {
 }
 
 Table.prototype.firstNumbers = function() {
-  this.num1 = Math.floor((Math.random()* 12) +1);
-  this.num2 = Math.floor((Math.random()* 12) +1);
+  var point = Math.floor(Math.random() * numbers1.length)
+  this.num1 = numbers1[point];
+  this.num2 = numbers2[point];
+  fromNumbersArray = true;
 }
 
 
