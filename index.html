@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -25,6 +25,62 @@
         <span id="answer"></span>
         <button class="btn" id="gotIt" type="buttons">Got it</button>
         <button class="btn" id="missedIt" type="button">Missed it</button>
+      </div>
+    </div>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="fonts/glyphicons-halflings-regular.woff2" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Multiplication Table</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="multipliers set_background">
+        <div class="jumbotron">
+          <h1>Flash Multiplication</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <span id="number1">
+            </span>
+          </div>
+          <div class="col-sm-2" id="glyphiconX">
+            <span class="glyphicon glyphicon-remove"></span>
+          </div>
+          <div class="col-sm-5">
+            <span id="number2">
+            </span>
+          </div>
+        </div>
+        <div class="center">
+          <button id="submit" class="fade_in"></button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="product set_background">
+        <div class="jumbotron">
+          <h1>Answer</h1>
+        </div>
+        <span id="answer"></span>
+        <button class="fade_in" id="gotIt" type="buttons">Got it</button>
+        <br>
+        <button class="fade_in" id="missedIt" type="button">Missed it</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="set_background gameOver">
+        <h1>Good job multiplication master, now tell your mom you finished and go play outside.</h1>
       </div>
     </div>
   </body>
