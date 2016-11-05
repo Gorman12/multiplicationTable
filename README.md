@@ -7,3 +7,7 @@
 * the submit button on the multiplying page has no text because I could not get it centered vertically and horizontally. personally I think It looks alright without text, but if someone wants to try and figure that out and get text into the button then go for it.
 
 * to Caitlin, I still have not integrated your user input idea into my javaScript yet but will work on that tomorrow. I am thinking of adding a small button to the top of the screen that drops down a menu to pick which numbers to focus on.
+
+* https://Gorman12.github.io/multplicationTable
+
+* When working on re-styling, when you inspect the page make sure to pick the mobile option to see what your changes will look like on a smartPhone. Getting it looking nice on mobile is the main concern now. Do not worry about desktop appearance.
