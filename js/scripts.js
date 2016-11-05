@@ -23,14 +23,14 @@ Table.prototype.multiply = function() {
 }
 
 Table.prototype.newNumber = function() {
-  var i = Math.floor((Math.random() * 2) +1);
+  var i = Math.floor((Math.random() * 3) +1);
   if (missedIt1.length > 6) {
     var point = Math.floor(Math.random() * missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
     fromNumbersArray = false;
-  } else if (i !== 2 && missedIt1.length >= 1) {
+  } else if (i === 3 && missedIt1.length >= 1) {
     var point = Math.floor(Math.random() * missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
