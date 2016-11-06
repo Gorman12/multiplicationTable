@@ -1,48 +1,24 @@
-///////////////////variables/////////////////////
+///////////////////globalVariables/////////////////////
+
 
 
 var missedIt1 = [];
 var missedIt2 = [];
-var numbers1 = [1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
-var numbers2 = [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9];
+var numbers1 = [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
+var numbers2 = [2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
 var index;
 var fromNumbersArray;
 
 
-////////////////business logic///////////////////
+
+////////////////businessLogic///////////////////
+
 
 
 function Table(num1, num2, answer) {
   this.num1 = num1;
   this.num2 = num2;
   this.answer = answer;
-}
-
-Table.prototype.multiply = function() {
-  this.answer = this.num1 * this.num2;
-}
-
-Table.prototype.newNumber = function() {
-  var i = Math.floor((Math.random() * 3) +1);
-  if (missedIt1.length > 6) {
-    var point = Math.floor(Math.random() * missedIt1.length);
-    this.num1 = missedIt1[point];
-    this.num2 = missedIt2[point];
-    index = point;
-    fromNumbersArray = false;
-  } else if (i === 3 && missedIt1.length >= 1) {
-    var point = Math.floor(Math.random() * missedIt1.length);
-    this.num1 = missedIt1[point];
-    this.num2 = missedIt2[point];
-    index = point;
-    fromNumbersArray = false
-  } else {
-    var point = Math.floor(Math.random()* numbers1.length);
-    this.num1 = numbers1[point];
-    this.num2 = numbers2[point];
-    index = point
-    fromNumbersArray = true;
-  }
 }
 
 Table.prototype.firstNumbers = function() {
@@ -52,8 +28,55 @@ Table.prototype.firstNumbers = function() {
   fromNumbersArray = true;
 }
 
+Table.prototype.multiply = function() {
+  this.answer = this.num1 * this.num2;
+}
+
+Table.prototype.newNumber = function() {
+  var i = Math.floor((Math.random() * 5) +1);
+  if (missedIt1.length > 12) {
+    var point = Math.floor(Math.random()* missedIt1.length);
+    this.num1 = missedIt1[point];
+    this.num2 = missedIt2[point];
+    index = point;
+    fromNumbersArray = false;
+  } else if (missedIt1.length > 9 && (i === 1 || 2 || 3 || 4)) {
+    var point = Math.floor(Math.random()* missedIt1.length);
+    this.num1 = missedIt1[point];
+    this.num2 = missedIt2[point];
+    index = point;
+    fromNumbersArray = false
+  } else if (missedIt1.length > 6 && (i === 1 || 2 || 3)) {
+    var point = Math.floor(Math.random()* missedIt1.length);
+    this.num1 = missedIt1[point];
+    this.num2 = missedIt2[point];
+    index = point;
+    fromNumbersArray = false
+  } else if (missedIt1.length > 3 && (i === 1 || 2)) {
+    var point = Math.floor(Math.random()* missedIt1.length);
+    this.num1 = missedIt1[point];
+    this.num2 = missedIt2[point];
+    index = point
+    fromNumbersArray = false;
+  } else if (missedIt1.length >1 && (i === 1)) {
+    var point = Math.floor(Math.random()* missedIt1.length);
+    this.num1 = missedIt1[point];
+    this.num2 = missedIt2[point];
+    index = point;
+    fromNumbersArray = false;
+  } else {
+    var point = Math.floor(Math.random()* numbers1.length);
+    this.num1 = numbers1[point];
+    this.num2 = numbers2[point];
+    index = point;
+    fromNumbersArray = true;
+  }
+}
+
+
 
 ///////////////////User logic/////////////////////////
+
 
 
 $(document).ready(function() {
