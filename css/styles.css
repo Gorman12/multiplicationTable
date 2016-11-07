@@ -86,7 +86,7 @@
   text-align: center;
   vertical-align: middle;
   font-size: 200px;
-  color: white;
+  color: #fffdd0;
 }
 
 #gotIt {
@@ -97,7 +97,7 @@
   background-color: #021605;
   font-size: 80px;
   border: solid;
-  border-color: white;
+  border-color: #fffdd0;
   border-radius: 100px;
 
 }
@@ -110,7 +110,7 @@
   background-color: #021605;
   font-size: 80px;
   border: solid;
-  border-color: white;
+  border-color: #fffdd0;
   border-radius: 100px;
 }
 
