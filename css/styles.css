@@ -33,12 +33,12 @@
   display: none;
   /*background-color: #094a13;*/
   background-color: black;
-  color: white;
+  color: #fffdd0;
 }
 
 .multipliers {
   background-color:  #021605;
-  color: white;
+  color: #fffdd0;
 }
 
 .col-sm-5 {
@@ -73,7 +73,7 @@
   text-align: center;
   vertical-align: middle;
   border: solid;
-  border-color: white;
+  border-color: blue;
   border-radius: 100px;
   font-size: 80px;
   width: 60%;

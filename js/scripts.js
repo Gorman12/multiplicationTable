@@ -65,7 +65,6 @@ Table.prototype.newNumber = function() {
     index = point;
     fromNumbersArray = false;
   } else {
-    alert("from numbers array")
     var point = Math.floor(Math.random()* numbers1.length);
     this.num1 = numbers1[point];
     this.num2 = numbers2[point];
