@@ -40,19 +40,19 @@ Table.prototype.newNumber = function() {
     this.num2 = missedIt2[point];
     index = point;
     fromNumbersArray = false;
-  } else if (missedIt1.length > 9 && (i === 1 || 2 || 3 || 4)) {
+  } else if (missedIt1.length > 9 && (i === 1 || i === 2 || i === 3 || i === 4)) {
     var point = Math.floor(Math.random()* missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
     fromNumbersArray = false
-  } else if (missedIt1.length > 6 && (i === 1 || 2 || 3)) {
+  } else if (missedIt1.length > 6 && (i === 1 || i === 2 || i === 3)) {
     var point = Math.floor(Math.random()* missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     index = point;
     fromNumbersArray = false
-  } else if (missedIt1.length > 3 && (i === 1 || 2)) {
+  } else if (missedIt1.length > 3 && (i === 1 || i === 2)) {
     var point = Math.floor(Math.random()* missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
@@ -65,6 +65,7 @@ Table.prototype.newNumber = function() {
     index = point;
     fromNumbersArray = false;
   } else {
+    alert("from numbers array")
     var point = Math.floor(Math.random()* numbers1.length);
     this.num1 = numbers1[point];
     this.num2 = numbers2[point];
