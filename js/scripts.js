@@ -12,6 +12,7 @@ var numbers1 = [];
 var numbers2 = [];
 var input1 = [];
 var input2 = [];
+var table;
 
 
 
@@ -100,21 +101,23 @@ Table.prototype.newNumber = function() {
 $(document).ready(function() {
   $(".gameOver").hide();
 
-
-  $("#submit").click(function(event) {
-    event.preventDefault();
-    var table = new Table(0,0,0);
+  $("select.form-control").on("mouseleave", function(){
+    table = new Table(0,0,0);
     $("input:checkbox[name=practice]:checked").each(function(){
       input1.push(parseInt($(this).val()));
     })
     $(".form-control option:selected").each(function(){
       input2.push(parseInt($(this).val()))
     })
-
     table.range();
     table.firstNumbers();
-    $("#number1").append(table.num1);
-    $("#number2").append(table.num2);
+
+    $("#number1").text(table.num1);
+    $("#number2").text(table.num2);
+  });
+
+  $("#submit").click(function(event) {
+    event.preventDefault();
     table.multiply();
     $(".multipliers").hide();
     $(".product").show();
