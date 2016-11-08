@@ -8,6 +8,9 @@ var numbers1 = [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,
 var numbers2 = [2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
 var index;
 var fromNumbersArray;
+var array1 = [];
+var array2 = [];
+
 
 
 
@@ -20,6 +23,26 @@ function Table(num1, num2, answer) {
   this.num2 = num2;
   this.answer = answer;
 }
+
+
+Table.prototype.range = function() {
+    var input1 = [2,8,3]
+    var input2 = 9
+    var i;
+    var x;
+
+    for (x = 0; x < input1.length; x++) {
+      for (i = 0; i < (input2 - 1); i++) {
+        array1.push(input1[x]);
+      }
+      for (i = 0; i < (input2 - 1); i++) {
+        var a = i + 2;
+        array2.push(a);
+      }
+    }
+}
+
+
 
 Table.prototype.firstNumbers = function() {
   var point = Math.floor(Math.random() * numbers1.length)
@@ -82,6 +105,7 @@ Table.prototype.newNumber = function() {
 $(document).ready(function() {
   $(".gameOver").hide();
   var table = new Table(0,0,0);
+  table.range();
   table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
