@@ -4,10 +4,14 @@
 
 var missedIt1 = [];
 var missedIt2 = [];
-var numbers1 = [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
-var numbers2 = [2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
+// var numbers1 = [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
+// var numbers2 = [2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
 var index;
 var fromNumbersArray;
+var number1 = [];
+var numbers2 = [];
+var input1 = [];
+var input2 = [];
 
 
 
@@ -19,6 +23,18 @@ function Table(num1, num2, answer) {
   this.num1 = num1;
   this.num2 = num2;
   this.answer = answer;
+}
+
+Table.prototype.range = function(){
+  for(var x = 0; x < input1.length; x++){
+    for(i = 0; i < (input2 - 1); i++) {
+      numbers1.push(input[x]);
+    }
+    for(i = 0; i < (input2 - 1); i++){
+      var a = i + 2;
+      numbers2.push(a);
+    }
+  }
 }
 
 Table.prototype.firstNumbers = function() {
@@ -82,6 +98,8 @@ Table.prototype.newNumber = function() {
 $(document).ready(function() {
   $(".gameOver").hide();
   var table = new Table(0,0,0);
+  table.range();
+  alert(numbers1);
   table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
