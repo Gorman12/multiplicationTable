@@ -156,4 +156,7 @@ $(document).ready(function() {
     $(".product").hide();
     $(".multipliers").show();
   });
+  $("button#playAgain").click(function(){
+    document.location.reload(true);
+  });
 });
