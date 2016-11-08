@@ -106,30 +106,21 @@
   color: #fffdd0;
 }
 
-#gotIt {
+#gotIt,
+ #missedIt,
+ #playAgain {
   display: block;
   margin: 0 auto;
   width: 50%;
   height: 20%;
   background-color: #6e7b8b;
-  font-size: 80px;
+  font-size: 50px;
   border: solid;
   border-color: #00dfc3;
   border-radius: 100px;
 
 }
 
-#missedIt {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
-  height: 20%;
-  background-color: #6e7b8b;
-  font-size: 80px;
-  border: solid;
-  border-color: #00dfc3;
-  border-radius: 100px;
-}
 
 .gameOver {
   background-color: #00dfc3;
