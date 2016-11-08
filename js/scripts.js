@@ -114,6 +114,7 @@ $(document).ready(function() {
 
     $("#number1").text(table.num1);
     $("#number2").text(table.num2);
+    $("select.form-control").off("mouseleave");
   });
 
   $("#submit").click(function(event) {
