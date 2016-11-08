@@ -90,14 +90,14 @@ $(document).ready(function() {
     event.preventDefault();
     table.multiply();
     $(".multipliers").hide();
-    $(".product").show();
+    $(".product").fadeIn();
     $("#answer").append(table.answer);
   });
 
   $("#gotIt").click(function() {
     if (numbers1.length < 2) {
-      $(".product").hide();
-      $(".gameOver").show();
+      $(".product").fadeOut();
+      $(".gameOver").fadeIn();
     } else {
       if (fromNumbersArray === true) {
         numbers1.splice(index, 1);
@@ -113,7 +113,7 @@ $(document).ready(function() {
       $("#number1").append(table.num1);
       $("#number2").append(table.num2);
       $(".product").hide();
-      $(".multipliers").show();
+      $(".multipliers").fadeIn();
     }
   });
 
