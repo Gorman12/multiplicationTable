@@ -8,10 +8,12 @@ var missedIt2 = [];
 // var numbers2 = [2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
 var index;
 var fromNumbersArray;
-var number1 = [];
+var numbers1 = [];
 var numbers2 = [];
 var input1 = [];
 var input2 = [];
+
+
 
 
 
@@ -28,7 +30,7 @@ function Table(num1, num2, answer) {
 Table.prototype.range = function(){
   for(var x = 0; x < input1.length; x++){
     for(i = 0; i < (input2 - 1); i++) {
-      numbers1.push(input[x]);
+      numbers1.push(input1[x]);
     }
     for(i = 0; i < (input2 - 1); i++){
       var a = i + 2;
@@ -97,15 +99,22 @@ Table.prototype.newNumber = function() {
 
 $(document).ready(function() {
   $(".gameOver").hide();
-  var table = new Table(0,0,0);
-  table.range();
-  alert(numbers1);
-  table.firstNumbers();
-  $("#number1").append(table.num1);
-  $("#number2").append(table.num2);
+
 
   $("#submit").click(function(event) {
     event.preventDefault();
+    var table = new Table(0,0,0);
+    $("input:checkbox[name=practice]:checked").each(function(){
+      input1.push(parseInt($(this).val()));
+    })
+    $(".form-control option:selected").each(function(){
+      input2.push(parseInt($(this).val()))
+    })
+
+    table.range();
+    table.firstNumbers();
+    $("#number1").append(table.num1);
+    $("#number2").append(table.num2);
     table.multiply();
     $(".multipliers").hide();
     $(".product").show();
