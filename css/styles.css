@@ -14,6 +14,10 @@
     }
 }
 
+.options {
+  display: none;
+}
+
 .headerA {
   background-color: #black;
   width: 100%;
@@ -50,7 +54,6 @@
   background-color:  #021605;
   color: #fffdd0;
   font-family: Luxi Mono;
-
 }
 
 .col-sm-5 {
@@ -129,4 +132,76 @@
 .gameOver {
   background-color: #094a13;
   color: white;
+  display: none;
+
+}
+
+.transparent {
+  background-color: black;
+  color: white;
+}
+
+.leftHand {
+  text-align: center;
+  display: none;
+  background-color: black;
+  color: #fffdd0;
+}
+
+.leftHand h1 {
+  font-size: 120px;
+  padding-top: 12%;
+}
+
+#choice {
+  padding-top: 15%;
+  text-align: center;
+  font-size: 70px;
+}
+
+
+#dropdown {
+  background-color: black;
+  color: white;
+  padding: 20%;
+
+}
+
+.rightHand {
+  text-align: center;
+  display: none;
+  background-color: black;
+  color: #fffdd0;
+}
+
+.rightHand h1 {
+  padding-top: 20%;
+  color: #fffdd0;
+  font-size: 120px;
+}
+
+.size {
+  height: 80px;
+  width: 50px;
+  color: #fffdd0;
+}
+
+#leftHandButton {
+  border-color: #fffdd0;
+  border-radius: 100px;
+  background-color: black;
+  height: 100px;
+  width: 300px;
+  padding: 15%;
+  padding-top: 40%;
+}
+
+#rightHandButton {
+  border-color: #fffdd0;
+  border-radius: 100px;
+  background-color: black;
+  height: 20%;
+  width: 300px;
+  padding: 15%;
+  padding-top: 40%;
 }
