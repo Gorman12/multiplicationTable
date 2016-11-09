@@ -4,14 +4,12 @@
 
 var missedIt1 = [];
 var missedIt2 = [];
-var numbers1 = [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9];
-var numbers2 = [2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9];
+var numbers1 = [];
+var numbers2 = [];
 var point;
 var fromNumbersArray;
-var input1 = []
-var input2 = 0
-var array1 = [];
-var array2 = [];
+var input1 = [];
+var input2 = [];
 var i;
 var x;
 var y;
@@ -30,14 +28,28 @@ function Table(num1, num2, answer) {
 
 function range() {
   for (x = 0; x < input1.length; x++) {
-    for (i = 0; i < (input2 - 1); i++) {
-      array1.push(input1[x]);
+    for (i = 2; i < (input2 + 1); i++) {
+      numbers1.push(input1[x]);
+      numbers2.push(i)
     }
-    for (i = 0; i < (input2 - 1); i++) {
-      y = i + 2;
-      array2.push(y);
-    }
+    // for (i = 0; i < (input2 - 1); i++) {
+    //   y = i + 2;
+    //
+    // }
   }
+  alert(numbers1);
+  alert(numbers2);
+}
+
+function initialRange() {
+  for (x = 2; x < 10; x++) {
+    for (i = 2; i < 10; i++ ) {
+      numbers1.push(x);
+      numbers2.push(i)
+    }
+  input1.push(x);
+  }
+  input2 = 9
 }
 
 Table.prototype.firstNumbers = function() {
@@ -73,7 +85,7 @@ Table.prototype.newNumber = function() {
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
     fromNumbersArray = false;
-  } else if (missedIt1.length >1 && (i === 1)) {
+  } else if (missedIt1.length > 1 && (i === 1)) {
     point = Math.floor(Math.random()* missedIt1.length);
     this.num1 = missedIt1[point];
     this.num2 = missedIt2[point];
@@ -93,9 +105,8 @@ Table.prototype.newNumber = function() {
 
 
 $(document).ready(function() {
-  // $(".leftHand").show();
-  $(".rightHand").show();
   var table = new Table(0,0,0);
+  initialRange();
   table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
@@ -104,14 +115,14 @@ $(document).ready(function() {
     event.preventDefault();
     table.multiply();
     $(".multipliers").hide();
-    $(".options").fadeIn();
+    $(".product").show();
     $("#answer").append(table.answer);
   });
 
   $("#gotIt").click(function() {
     if (numbers1.length < 2) {
-      $(".product").fadeOut();
-      $(".gameOver").fadeIn();
+      $(".product").hide();
+      $(".gameOver").show();
     } else {
       if (fromNumbersArray === true) {
         numbers1.splice(point, 1);
@@ -127,7 +138,7 @@ $(document).ready(function() {
       $("#number1").append(table.num1);
       $("#number2").append(table.num2);
       $(".product").hide();
-      $(".multipliers").fadeIn();
+      $(".multipliers").show();
     }
   });
 
@@ -143,8 +154,43 @@ $(document).ready(function() {
     $(".product").hide();
     $(".multipliers").show();
   });
-  $("#options").click(function() {
+  $("#number1").click(function() {
     $(".multipliers").hide();
-    $(".options").fadeIn();
-  })
+    $(".leftHand").show();
+  });
+  $("#number2").click(function() {
+    $(".multipliers").hide();
+    $(".rightHand").show();
+  });
+  $("#leftHandButton").click(function() {
+    input1 = [];
+    numbers1 = [];
+    numbers2 = [];
+    $("input:checkbox[name=practice]:checked").each(function() {
+      input1.push(parseInt($(this).val()));
+    });
+    $("#number1").empty();
+    $("#number2").empty();
+    range();
+    table.newNumber();
+    $("#number1").append(table.num1);
+    $("#number2").append(table.num2);
+    $(".leftHand").hide();
+    $(".multipliers").show();
+  });
+  $("#rightHandButton").click(function() {
+    input2 = 0;
+    numbers2 = [];
+    numbers1 = [];
+    var a = (parseInt($(".form-control :selected").val()));
+    input2 = a;
+    range();
+    $("#number1").empty();
+    $("#number2").empty();
+    table.newNumber();
+    $("#number1").append(table.num1);
+    $("#number2").append(table.num2);
+    $(".rightHand").hide();
+    $(".multipliers").show();
+  });
 });
