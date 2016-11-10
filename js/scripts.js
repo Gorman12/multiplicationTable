@@ -13,7 +13,7 @@ var input2 = [];
 var i;
 var x;
 var y;
-var round;
+var round = 0;
 
 
 
@@ -40,11 +40,11 @@ function initialRange() {
   for (x = 2; x < 10; x++) {
     for (i = 2; i < 10; i++ ) {
       numbers1.push(x);
-      numbers2.push(i)
+      numbers2.push(i);
     }
   input1.push(x);
   }
-  input2 = 9
+  input2 = 9;
 }
 
 Table.prototype.firstNumbers = function() {
@@ -105,7 +105,6 @@ $(document).ready(function() {
   table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
-
   $("#submit").click(function(event) {
     event.preventDefault();
     table.multiply();
@@ -137,6 +136,7 @@ $(document).ready(function() {
       $(".round").css("color", "white").dequeue();
       $(".round").delay(2000).queue(function() {
       $(this).css("color", "#021605");
+
       });
     } else {
       if (fromNumbersArray === true) {
