@@ -1,19 +1,19 @@
-///////////////////globalVariables/////////////////////
-
-
-
 var missedIt1 = [];
 var missedIt2 = [];
+var round;
+var index;
+var fromNumbersArray;
 var numbers1 = [];
 var numbers2 = [];
-var point;
-var fromNumbersArray;
 var input1 = [];
 var input2 = [];
+var point;
 var i;
 var x;
 var y;
-var round;
+
+
+
 
 
 
@@ -27,6 +27,7 @@ function Table(num1, num2, answer) {
   this.answer = answer;
 }
 
+<<<<<<< HEAD
 function range() {
   for (x = 0; x < input1.length; x++) {
     for (i = 2; i < (input2 + 1); i++) {
@@ -45,7 +46,6 @@ function initialRange() {
   input1.push(x);
   }
   input2 = 9
-}
 
 Table.prototype.firstNumbers = function() {
   point = Math.floor(Math.random() * numbers1.length)
@@ -100,12 +100,12 @@ Table.prototype.newNumber = function() {
 
 
 $(document).ready(function() {
+<<<<<<< HEAD
   var table = new Table(0,0,0);
   initialRange();
   table.firstNumbers();
   $("#number1").append(table.num1);
   $("#number2").append(table.num2);
-
   $("#submit").click(function(event) {
     event.preventDefault();
     table.multiply();
