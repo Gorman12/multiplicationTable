@@ -14,6 +14,32 @@
     }
 }
 
+.fade_out {
+  animation-duration: 2s;
+  animation-name: fadeOut;
+  animation-delay: 2s;
+}
+
+@keyFrames fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(.8, .8);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+
+/*#round {
+  color: white;
+  display: none;
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 5%;
+  line-height: 100px;
+}*/
+
 .options {
   display: none;
 }
@@ -54,6 +80,7 @@
   background-color:  #021605;
   color: #fffdd0;
   font-family: Luxi Mono;
+  position: relative;
 }
 
 .col-sm-5 {
@@ -77,8 +104,14 @@
   background-size: cover;
 }
 
-.center {
-  padding-top: 20%;
+.button {
+  padding-top: 10%;
+}
+
+.round {
+  text-align: center;
+  font-size: 80px;
+  color: #021605
 }
 
 #submit {
@@ -86,15 +119,16 @@
   margin: 0 auto;
   padding-top: 50%;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: center;
   border: solid;
   border-color: blue;
   border-radius: 100px;
-  font-size: 80px;
+  font-size: 70px;
   width: 60%;
   height: 40%;
   background-color: black;
   color: white;
+  line-height: -100px;
 }
 
 #answer {

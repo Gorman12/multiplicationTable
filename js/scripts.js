@@ -13,6 +13,7 @@ var input2 = [];
 var i;
 var x;
 var y;
+var round;
 
 
 
@@ -32,13 +33,7 @@ function range() {
       numbers1.push(input1[x]);
       numbers2.push(i)
     }
-    // for (i = 0; i < (input2 - 1); i++) {
-    //   y = i + 2;
-    //
-    // }
   }
-  alert(numbers1);
-  alert(numbers2);
 }
 
 function initialRange() {
@@ -120,9 +115,29 @@ $(document).ready(function() {
   });
 
   $("#gotIt").click(function() {
-    if (numbers1.length < 2) {
+    if (numbers1.length === 1) {
+      input1 = [];
+      input2 = 0;
+      numbers1 = [];
+      numbers2 = [];
+      $("input:checkbox[name=practice]:checked").each(function() {
+        input1.push(parseInt($(this).val()));
+      });
+      var a = (parseInt($(".form-control :selected").val()));
+      input2 = a;
+      $("#number1").empty();
+      $("#number2").empty();
+      $("#answer").empty();
+      range();
+      table.newNumber();
+      $("#number1").append(table.num1);
+      $("#number2").append(table.num2);
       $(".product").hide();
-      $(".gameOver").show();
+      $(".multipliers").show();
+      $(".round").css("color", "white").dequeue();
+      $(".round").delay(2000).queue(function() {
+      $(this).css("color", "#021605");
+      });
     } else {
       if (fromNumbersArray === true) {
         numbers1.splice(point, 1);
@@ -139,7 +154,7 @@ $(document).ready(function() {
       $("#number2").append(table.num2);
       $(".product").hide();
       $(".multipliers").show();
-    }
+      }
   });
 
   $("#missedIt").click(function() {
